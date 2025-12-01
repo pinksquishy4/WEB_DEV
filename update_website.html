@@ -1,3 +1,4 @@
+<!--JS 6th Update Website-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +11,6 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: grid;
-            grid-template-columns: 1fr;
-            justify-items: center;
         }
 
         h1, h2, h3 {
@@ -20,37 +18,41 @@
             margin: 20px 0;
         }
 
+        .section {
+            display: flex;
+            align-items: flex-start;
+            margin: 20px;
+            gap: 20px;
+        }
+
+        img {
+            width: 200px;
+            border-radius: 8px;
+        }
+
         p, ul {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 10px;
+            max-width: 600px;
             line-height: 1.6;
         }
 
         ul {
             list-style-type: square;
-            text-align: left;
         }
 
-        #One-wrapper {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px 0;
-            padding: 10px;
-        }
-
-        #One-wrapper img {
-            width: 200px;
-            border-radius: 8px;
-            display:grid;
-            grid-template-columns: 1fr 2fr;
-        }
-
-        img {
+        #extra {
+            display: none;
             margin: 20px;
-            padding: 5px;
-            border-radius: 10px;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 16px;
+            background: #7b5a3a;
+            color: aliceblue;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -58,25 +60,62 @@
 
     <h1>Weiner Dogs</h1>
 
-    <div id="One-wrapper">
-        <img src="https://encrypted-tbn0.gstatic.com/images?qtbn:ANd9GcSLZraZZWuI1xAZqd40Zpa3h5Eu_s7_WYJBTw&s" alt="cute weiner dog looking up">
+    <div class="section">
+        <!-- This image will change on hover -->
+        <img id="hoverDog" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLZraZZWuI1xAZqd40Zpa3h5Eu_s7_WYJBTw&s" alt="cute weiner dog looking up">
         <img src="https://i.pinimg.com/736x/a8/66/c7/a866c7727e180cb6c660c55f95d714a7.jpg" alt="chiweenie picture funny">
     </div>
 
-    <h2>The types of weiner dogs</h2>
-    <p>There are many different types of weiner dogs. Some are smooth haired, some are miniature, and some are mixed like the chiweenie.</p>
+    <div class="section">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZCg-mynsese_Dgb7-Khj4eE5vL0wakgbqFQ&s" alt="cute weiner dog in a bun">
+        <div>
+            <h2>The types of weiner dogs</h2>
+            <p>There are many different types of weiner dogs. Some are smooth haired, some are miniature, and some are mixed like the chiweenie.</p>
+            <ul>
+                <li>Chiweenie</li>
+                <li>Smooth haired dachshund</li>
+                <li>Miniature dachshund</li>
+            </ul>
+            <h3>How to take care of them</h3>
+            <p>Give them gentle exercise, healthy food, and protect their backs. Brush their fur and visit the vet often. You need to check their health a lot
+                you do not want them to get sick. You also need to give them lots of love and attention. Weiner dogs are very social animals and need companionshop
+            </p>
+        </div>
+    </div>
 
-    <ul>
-        <li>Chiweenie</li>
-        <li>Smooth haired dachshund</li>
-        <li>Miniature dachshund</li>
-    </ul>
+    <div id="extra" class="section">
+        <img src="https://media.istockphoto.com/id/1061822236/photo/dog-dachshund-black-and-tan-relaxed-from-spa-procedures-on-face-with-cucumber-covered-with-a.jpg?s=612x612&w=0&k=20&c=_psTNnY4sPUcPtLJmySv7rhxUVPhVJ3kbEesSvl76I0=" alt="sleepy weiner dog">
+        <p>Weiner dogs love to cuddle and nap in cozy spots. They are loyal and playful pets.</p>
+    </div>
 
-    <h3>How to take care of them</h3>
-    <p>Give them gentle exercise, healthy food, and protect their backs. Brush their fur and visit the vet often. You need to check their health a lot
-        you do not want them to get sick. You also need to give them lots of love and attention. Weiner dogs are very social animals and need companionshop
-    </p>
+    <button id="toggleBtn">Show More</button>
 
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZCg-mynsese_Dgb7-Khj4eE5vL0wakgbqFQ&s" alt="cute weiner dog in a bun">
+    <script>
+        // Hover image swap
+        const hoverDog = document.getElementById('hoverDog');
+        const originalSrc = hoverDog.src;
+        const hoverSrc = "https://i.pinimg.com/736x/f2/4a/0e/f24a0e35365a37019077015e8e260ed7.jpg";
+
+        hoverDog.addEventListener("mouseenter", () => {
+            hoverDog.src = hoverSrc;
+        });
+        hoverDog.addEventListener("mouseleave", () => {
+            hoverDog.src = originalSrc;
+        });
+
+        // Show/Hide toggle
+        const btn = document.getElementById("toggleBtn");
+        const extra = document.getElementById("extra");
+
+        btn.addEventListener("click", () => {
+            if (extra.style.display === "none" || extra.style.display === "") {
+                extra.style.display = "flex";
+                btn.textContent = "Hide More";
+            } else {
+                extra.style.display = "none";
+                btn.textContent = "Show More";
+            }
+        });
+    </script>
 
 </body>
