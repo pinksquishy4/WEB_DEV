@@ -13,8 +13,40 @@
         }
         h1, h2, h3 {
             text-align: center;
-            margin: 20px 0;
+            margin: 20px 0;}
+
+        img{
+             width: 500px;
+            border-radius: 8px;
         }
+        .section {
+            display: flex;
+            align-items: flex-start;
+            margin: 20px;
+            gap: 20px;
+        }
+        .onewrapper{
+            display: flex;
+            align-items: flex-start;
+            margin: 20px;
+            gap: 40px;
+        }
+          button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 16px;
+            background: #7b5a3a;
+            color: aliceblue;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+         #more {
+            display: none;
+            margin: 20px;
+         }
+    </style>
+      
     </style>
 
     <title> Bonneville Salt Flats </title>
@@ -29,6 +61,9 @@
     It could be very hot and dry in the summer, or flooded in winter and spring. there is also the risk of sudden salt of dust storms that can be very 
     dangerous. It is crucial to check the weather forecast and road conditions before visiting. 
 </p>
+<div class="onewrapper">
+<img src="https://www.visitutah.com/azure/cmsroot/visitutah/media/site-assets/articles-photography/article-photography-6/web2000_tooelecounty_bonnevillesaltflats_marcpiscotty_.jpg" alt="people on the salt flats">
+</div>
 <h3>What do you bring?</h3>
 <P>If you are wondering what to bring to the salt flats, we got your back. Here is a good list of what to bring to be prepared for anything and have the 
     best experience you can have.</P>
@@ -39,6 +74,42 @@
     <li>sunglasses! Make sure to choose a pair that provides good UV protection</li>
     <li>plenty of snacks or a full picnic lunch. There are no facilities on the flats. </li>
 </ul>
+    <div class="section">
+        
+        <img id="hoverimg" src="https://www.visitutah.com/azure/cmsroot/visitutah/media/site-assets/three-season-photography/northern-utah/sunset-on-bonneville-salt-flats-silver-island-near-wendover-october-2004-steve-greenwood.jpg" alt="Sunnset on salt flats">
+        
+    </div>
+     <div id="more" class="section">
+        <img src="https://media.istockphoto.com/id/1061822236/photo/dog-dachshund-black-and-tan-relaxed-from-spa-procedures-on-face-with-cucumber-covered-with-a.jpg?s=612x612&w=0&k=20&c=_psTNnY4sPUcPtLJmySv7rhxUVPhVJ3kbEesSvl76I0=" alt="sleepy weiner dog">
+        <p>Weiner dogs love to cuddle and nap in cozy spots. They are loyal and playful pets.</p>
+    </div>
+ <script>
+        // Hover image swap
+        const hoverDog = document.getElementById('hoverimg');
+        const originalSrc = hoverDog.src;
+        const hoverSrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8y_5CLlQ7Jroib9H49GB0HJ05z8k3efVjWg&s";
+
+        hoverDog.addEventListener("mouseenter", () => {
+            hoverDog.src = hoverSrc;
+        });
+        hoverDog.addEventListener("mouseleave", () => {
+            hoverDog.src = originalSrc;
+        });
+
+        // Show/Hide toggle
+        const btn = document.getElementById("toggleBtn");
+        const extra = document.getElementById("more");
+
+        btn.addEventListener("click", () => {
+            if (extra.style.display === "none" || extra.style.display === "") {
+                extra.style.display = "flex";
+                btn.textContent = "Hide More";
+            } else {
+                extra.style.display = "none";
+                btn.textContent = "Show More";
+            }
+        });
+    </script>
     
 </body>
 </html>
