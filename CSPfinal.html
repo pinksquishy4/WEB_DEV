@@ -3,51 +3,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <style>
-        body {
-            background-color: honeydew;
-            color: rosybrown;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        h1, h2, h3 {
-            text-align: center;
-            margin: 20px 0;}
+  <style>
+    body {
+        background-color: honeydew;
+        color: rosybrown;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
 
-        img{
-             width: 500px;
-            border-radius: 8px;
-        }
-        .section {
-            display: flex;
-            align-items: flex-start;
-            margin: 20px;
-            gap: 20px;
-        }
-        .onewrapper{
-            display: flex;
-            align-items: flex-start;
-            margin: 20px;
-            gap: 40px;
-        }
-          button {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 16px;
-            background: #7b5a3a;
-            color: aliceblue;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-         #more {
-            display: none;
-            margin: 20px;
-         }
-    </style>
-      
-    </style>
+    h1, h2, h3 {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    img {
+        width: 500px;
+        border-radius: 8px;
+    }
+
+    .section, .onewrapper {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;            
+        margin: 20px;
+        gap: 20px;
+    }
+
+    .section img, .onewrapper img {
+        width: 400px;        
+        border-radius: 8px;
+        object-fit: cover;   
+        margin-left: auto;   
+        
+    }
+
+    button {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 16px;
+        background: #7b5a3a;
+        color: aliceblue;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    #more {
+        display: none;
+        margin: 20px;
+    }
+</style>
 
     <title> Bonneville Salt Flats </title>
 </head>
@@ -80,9 +86,10 @@
         
     </div>
      <div id="more" class="section">
-        <img src="https://media.istockphoto.com/id/1061822236/photo/dog-dachshund-black-and-tan-relaxed-from-spa-procedures-on-face-with-cucumber-covered-with-a.jpg?s=612x612&w=0&k=20&c=_psTNnY4sPUcPtLJmySv7rhxUVPhVJ3kbEesSvl76I0=" alt="sleepy weiner dog">
-        <p>Weiner dogs love to cuddle and nap in cozy spots. They are loyal and playful pets.</p>
+        <img src="https://i0.wp.com/www.culturalchromatics.com/wp-content/uploads/2016/02/BonnevilleSaltFlats-%C2%A9NanetteWong-14-1.jpg?resize=660%2C440&ssl=1" alt="Breathtaking view of salt flats">
+        <p>The Salt flats are a breathtaking place to visit. They offer so many much and you should visit it to take the most beutfiul photos. This area is perfect for photography and filmaking.</p>
     </div>
+    <button id="toggleBtn">Show More</button>
  <script>
         // Hover image swap
         const hoverDog = document.getElementById('hoverimg');
@@ -96,7 +103,7 @@
             hoverDog.src = originalSrc;
         });
 
-        // Show/Hide toggle
+       
         const btn = document.getElementById("toggleBtn");
         const extra = document.getElementById("more");
 
@@ -109,6 +116,7 @@
                 btn.textContent = "Show More";
             }
         });
+
     </script>
     
 </body>
